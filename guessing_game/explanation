@@ -1,0 +1,43 @@
+1. Preparação (O Sorteio)
+Python
+import random
+
+secret_number = random.randint(1, 100)
+attempts = 7
+import random: É como se você estivesse pegando uma ferramenta da caixa. Sem ela, o computador não sabe gerar números aleatórios.
+
+randint(1, 100): Aqui o computador escolhe o número e guarda na "caixa" chamada secret_number.
+
+attempts = 7: Definimos o seu estoque de vidas.
+
+2. O Ciclo do Jogo (O Loop)
+Python
+while attempts > 0:
+O while significa "enquanto". Ou seja: "enquanto você tiver vidas (maior que zero), repita o que está aqui dentro". Se as vidas chegarem a 0, o jogo para de perguntar.
+
+3. Entrada de Dados (O Chute)
+Python
+guess = int(input("Enter your guess: "))
+input: Abre o campo para você digitar no terminal.
+
+int(...): O Python lê tudo o que você digita como se fosse um texto (letras). O int transforma esse texto em um número inteiro para que o computador possa fazer contas matemáticas com ele.
+
+4. As Regras (Condicionais)
+Aqui é onde o jogo decide o que aconteceu com o seu chute:
+
+if guess == secret_number: Se você acertar na mosca, o jogo imprime que você venceu e o break "quebra" o loop imediatamente (você não precisa mais gastar o resto das tentativas).
+
+elif guess < secret_number: Se o seu chute for menor, ele te dá a dica Too low.
+
+else: Se não for igual e não for menor, só sobrou ser maior, então ele imprime Too high.
+
+5. O Fim da Rodada
+Python
+attempts -= 1
+Isso aqui é muito importante! Ele tira 1 vida do seu estoque a cada vez que o loop roda. Se você não colocar isso, terá tentativas infinitas (o que chamamos de loop infinito).
+
+6. O Game Over
+Python
+if attempts == 0:
+    print(f"Game Over! The number was {secret_number}.")
+Essa parte fica fora do loop. Ela só acontece se o loop terminar porque suas vidas acabaram e você não usou o break (não acertou).
