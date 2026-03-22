@@ -1,34 +1,99 @@
+/* Configurações de Fonte */
 body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Fundo mais escuro */
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
-#wrap {
-    width: 600px;
+header {
+    background-color: #f1c40f;
+    color: #000;
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+#title { font-size: 4rem; margin: 0; }
+
+/* Imagem Responsiva */
+#img-div {
+    background-color: #222;
+    padding: 15px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#image {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+/* Seção de Poderes (Cards) */
+#powers {
+    max-width: 1000px;
     margin: 40px auto;
-    background-color: white;
-    padding: 30px;
+    padding: 0 20px;
 }
 
-h1 {
-    text-align: center;
+.powers-container {
+    display: flex;
+    flex-wrap: wrap; /* Faz os cards descerem em telas pequenas */
+    gap: 20px;
+    justify-content: center;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.power-card {
+    background-color: #333;
+    border-left: 5px solid #f1c40f;
+    padding: 15px;
+    flex: 1;
+    min-width: 250px;
+    border-radius: 4px;
 }
 
-li {
-    text-align: center;
+.power-card h3 { color: #f1c40f; margin-top: 0; }
+
+/* Conteúdo de Texto */
+#tribute-info {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 { font-family: 'Oswald', sans-serif; color: #f1c40f; text-transform: uppercase; }
+
+li { margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+
+/* Aside (Curiosidades) */
+#trivia {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #2980b9; /* Azul X-Men */
+    padding: 20px;
+    border-radius: 10px;
     font-style: italic;
-    margin-bottom: 5px;
 }
 
-.copyright {
+/* Footer */
+footer {
     text-align: center;
-    font-size: 0.9em;
-    margin-top: 30px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+    padding: 30px;
+    border-top: 2px solid #f1c40f;
+    margin-top: 50px;
+}
+
+#tribute-link { color: #f1c40f; text-decoration: none; font-weight: bold; }
+#tribute-link:hover { text-decoration: underline; }
+
+/* Media Query para Celulares */
+@media (max-width: 600px) {
+    #title { font-size: 2.5rem; }
+    .powers-container { flex-direction: column; }
 }
