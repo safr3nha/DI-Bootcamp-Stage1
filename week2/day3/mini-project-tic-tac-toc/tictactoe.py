@@ -35,25 +35,33 @@ def play():
         display_board(board)
         print("Player " + current_player + " turn")
         
-        row = int(input("Enter row (0-2): "))
-        col = int(input("Enter col (0-2): "))
+        # O truque para nao dar erro:
+        row_input = input("Enter row (0, 1, 2): ")
+        col_input = input("Enter col (0, 1, 2): ")
         
-        if board[row][col] == " ":
-            board[row][col] = current_player
-            turns = turns + 1
+        # Verifica se o que foi digitado sao numeros validos
+        if row_input in ["0", "1", "2"] and col_input in ["0", "1", "2"]:
+            row = int(row_input)
+            col = int(col_input)
             
-            if check_win(board, current_player):
-                display_board(board)
-                print("CONGRATULATIONS!")
-                print("Player " + current_player + " is the winner!")
-                return
-            
-            if current_player == "X":
-                current_player = "O"
+            if board[row][col] == " ":
+                board[row][col] = current_player
+                turns = turns + 1
+                
+                if check_win(board, current_player):
+                    display_board(board)
+                    print("CONGRATULATIONS!")
+                    print("Player " + current_player + " is the winner!")
+                    return
+                
+                if current_player == "X":
+                    current_player = "O"
+                else:
+                    current_player = "X"
             else:
-                current_player = "X"
+                print("Spot taken, try again")
         else:
-            print("Spot taken, try again")
+            print("INVALID INPUT! Use only 0, 1 or 2")
             
     display_board(board)
     print("It is a tie!")
