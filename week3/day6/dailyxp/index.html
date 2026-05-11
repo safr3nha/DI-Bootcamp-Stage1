@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Drumset JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="keys">
+        <div data-key="A" class="key">
+            <kbd>A</kbd>
+            <span class="sound">Clap</span>
+        </div>
+        <div data-key="S" class="key">
+            <kbd>S</kbd>
+            <span class="sound">Hihat</span>
+        </div>
+        <div data-key="D" class="key">
+            <kbd>D</kbd>
+            <span class="sound">Kick</span>
+        </div>
+        <div data-key="F" class="key">
+            <kbd>F</kbd>
+            <span class="sound">Snare</span>
+        </div>
+    </div>
+
+    <!-- Sons (Links de exemplo) -->
+    <audio data-key="A" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/clap.wav"></audio>
+    <audio data-key="S" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/hihat.wav"></audio>
+    <audio data-key="D" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/kick.wav"></audio>
+    <audio data-key="F" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/snare.wav"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
