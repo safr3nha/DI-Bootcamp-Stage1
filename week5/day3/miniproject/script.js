@@ -21,7 +21,7 @@ const displayRobots = (robotArray) => {
     robotArray.forEach((robot) => {
         const { name, email, image } = robot;
 
-        // Criar o HTML do card usando Template Strings
+        // 
         const card = `
             <div class="card">
                 <img src="${image}" alt="robot">
@@ -30,7 +30,6 @@ const displayRobots = (robotArray) => {
             </div>
         `;
         
-        // Adicionar o card dentro do container
         container.innerHTML += card;
     });
 };
@@ -39,12 +38,12 @@ const displayRobots = (robotArray) => {
 searchBox.addEventListener('input', (e) => {
     const text = e.target.value.toLowerCase();
     
-    // Filtrar a lista original
+   
     const filteredRobots = robots.filter(robot => {
         return robot.name.toLowerCase().includes(text);
     });
 
-    // Mostrar apenas os filtrados
+    
     displayRobots(filteredRobots);
 });
 
