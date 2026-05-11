@@ -1,0 +1,21 @@
+const allBooks = [
+    { title: "The Hobbit", author: "J.R.R. Tolkien", image: "https://example.com/hobbit.jpg", alreadyRead: true },
+    { title: "1984", author: "George Orwell", image: "https://example.com/1984.jpg", alreadyRead: false }
+];
+
+const section = document.querySelector(".listBooks");
+allBooks.forEach(book => {
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    p.textContent = `${book.title} written by ${book.author}`;
+    
+    const img = document.createElement("img");
+    img.src = book.image;
+    img.style.width = "100px";
+    
+    if (book.alreadyRead) p.style.color = "red";
+    
+    div.appendChild(p);
+    div.appendChild(img);
+    section.appendChild(div);
+});
