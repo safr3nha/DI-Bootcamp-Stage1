@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Challenge: Form to JSON</title>
+</head>
+<body>
+
+    <form id="userForm">
+        <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+        <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+        <button type="submit">Send</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        const form = document.getElementById('userForm');
+        const outputDiv = document.getElementById('output');
+
+        form.addEventListener('submit', function(event) {
+            // Prevent the form from submitting to a server (stopping page reload)
+            event.preventDefault();
+
+            // Retrieve data from inputs
+            const firstName = document.getElementById('firstname').value;
+            const lastName = document.getElementById('lastname').value;
+
+            // Create an object
+            const formData = {
+                name: firstName,
+                lastname: lastName
+            };
+
+            // Convert object to JSON string
+            const jsonString = JSON.stringify(formData);
+
+            // Append to the DOM
+            outputDiv.textContent = jsonString;
+        });
+    </script>
+
+</body>
+</html>
