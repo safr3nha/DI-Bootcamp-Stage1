@@ -1,0 +1,28 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<main>
+    <h1>Buscar no RSS Facts Reader</h1>
+    <section>
+        <form action="/search/title" method="post">
+            <label for="title">Buscar Título</label>
+            <input type="text" id="title" name="title" required>
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+    <section>
+        <form action="/search/category" method="post">
+            <label for="category">Buscar Categoria</label>
+            <input type="text" id="category" name="category" required>
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+    <% if (searchResults) { %>
+        <h2>Resultados</h2>
+        <% if (searchResults.length > 0) { %>
+            <%- include('../partials/posts', { posts: searchResults }) %>
+        <% } else { %>
+            <p>Nenhum resultado encontrado.</p>
+        <% } %>
+    <% } %>
+</main>
+<%- include('../partials/footer') %>
