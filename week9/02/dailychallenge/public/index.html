@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="game">
+        <h1 id="emojiDisplay"></h1>
+        <div id="options"></div>
+        <p>Score: <span id="score">0</span></p>
+    </div>
+
+    <script>
+        let score = 0;
+        async function fetchChallenge() {
+            const res = await fetch('/api/challenge');
+            const data = await res.json();
+            document.getElementById('emojiDisplay').innerText = data.emoji;
+            
+            const container = document.getElementById('options');
+            container.innerHTML = '';
+            data.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.innerText = opt;
+                btn.onclick = () => checkGuess(opt, data.answer);
+                container.appendChild(btn);
+            });
+        }
+
+        function checkGuess(guess, answer) {
+            if (guess === answer) {
+                score++;
+                document.getElementById('score').innerText = score;
+                alert("Correct!");
+            } else {
+                alert("Wrong! The answer was " + answer);
+            }
+            fetchChallenge();
+        }
+        fetchChallenge();
+    </script>
+</body>
+</html>
