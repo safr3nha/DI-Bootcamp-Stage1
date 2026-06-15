@@ -1,0 +1,60 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #e9f2ff 0%, #f8fafc 100%);
+}
+
+.carousel-card {
+  width: min(980px, 100%);
+  background: #ffffff;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.carousel-header h1 {
+  font-size: clamp(2rem, 2.4vw, 3rem);
+  margin-bottom: 0.25rem;
+}
+
+.carousel-slide img {
+  border-radius: 0.8rem;
+  max-height: 540px;
+  object-fit: cover;
+}
+
+.legend-overlay {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 0.85rem;
+  background: rgba(0, 21, 60, 0.6);
+  color: #ffffff;
+  text-align: left;
+}
+
+.legend-overlay h2,
+.legend-overlay p {
+  margin: 0;
+}
+
+.carousel .control-dots .dot {
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.85);
+  width: 0.85rem;
+  height: 0.85rem;
+  opacity: 0.9;
+}
+
+.carousel .control-dots .dot.selected {
+  background: #0d6efd;
+}
+
+.carousel .thumbs {
+  display: none;
+}
